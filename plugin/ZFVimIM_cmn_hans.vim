@@ -3,6 +3,41 @@ function! s:dbInit()
     let repoPath = s:repoPath
     let dbFile = '/misc/cmn_hans.txt'
     let dbCountFile = '/misc/cmn_hans_count.txt'
+	
+	let g:ZFVimIM_symbolMap = {
+        \   ' ' : [''],
+        \   '`' : ['·'],
+        \   '!' : ['！'],
+        \   '$' : ['￥'],
+        \   '^' : ['……'],
+        \   '-' : [''],
+        \   '_' : ['——'],
+        \   '(' : ['（'],
+        \   ')' : ['）'],
+        \   '[' : ['【'],
+        \   ']' : ['】'],
+        \   '<' : ['《'],
+        \   '>' : ['》'],
+        \   '\' : ['、'],
+        \   '/' : ['、'],
+        \   ';' : ['；'],
+        \   ':' : ['：'],
+        \   ',' : ['，'],
+        \   '.' : ['。'],
+        \   '?' : ['？'],
+        \   "'" : ['‘', '’'],
+        \   '"' : ['“', '”'],
+        \   '0' : [''],
+        \   '1' : [''],
+        \   '2' : [''],
+        \   '3' : [''],
+        \   '4' : [''],
+        \   '5' : [''],
+        \   '6' : [''],
+        \   '7' : [''],
+        \   '8' : [''],
+        \   '9' : [''],
+        \ }
 
     let db = ZFVimIM_dbInit({
                 \   'name' : 'cmn_hans',
@@ -19,7 +54,7 @@ function! s:dbInit()
                 \ })
 endfunction
 
-augroup ZFVimIM_pinyin_augroup
+augroup ZFVimIM_cmn_hans_augroup
     autocmd!
     autocmd User ZFVimIM_event_OnDbInit call s:dbInit()
 augroup END
